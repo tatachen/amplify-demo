@@ -1,0 +1,28 @@
+.grid {
+    width: 100%;
+    display: grid;
+    grid: var(--top-menu-height) / 1fr;
+    grid-template-areas:  "menu"
+                          "maincontent";
+    min-height: 100vh;
+}
+
+.menu {
+    grid-area: menu;
+    z-index: 100;
+}
+
+.main-content {
+    grid-area: maincontent;
+    background-color: #f9fafb;
+}
+
+.display-inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.no-border::before {
+    display: none;
+}
+

@@ -1,0 +1,9 @@
+.text-icon {
+    white-space: 'nowrap';
+    display: inline-flex;
+}
+
+.text-icon-label {
+    align-self: center;
+    padding-left: 4px;
+}

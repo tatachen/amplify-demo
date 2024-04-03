@@ -1,0 +1,40 @@
+.top-menu {
+    height: var(--top-menu-height);
+}
+
+.menu-item {
+    width: 14em;
+}
+
+.menu-logo {
+    font-family: "Roboto Light", serif;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+.display-inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-logo img, .display-inline img {
+    margin-right: 8px;
+    width: 50px;
+}
+
+.menu-logo p {
+    color: #3cbfc8;
+}
+
+.top-menu i.icon {
+    margin: 0 !important;
+}
+
+.no-border::before {
+    display: none;
+}
+
+.label-no-corner {
+    top: 0.8em !important;
+    left: 78% !important;
+}

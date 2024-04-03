@@ -1,0 +1,29 @@
+.parent {
+    display: inline-flex;
+}
+
+.side-menu {
+    transition: width 0.3s;
+    width: 14em !important;
+    overflow: hidden;
+    padding-top: var(--top-menu-height);
+    z-index: 99;
+}
+
+.small-side {
+    width: 4em !important;
+    flex-basis: 4em;
+}
+
+.content-layout {
+    position: absolute;
+    right: 0;
+    transition: all 0.3s;
+    padding: 10px;
+    width: calc(100% - 14em);
+}
+
+.small-content {
+    padding: 10px;
+    width: calc(100% - 4em);
+}
