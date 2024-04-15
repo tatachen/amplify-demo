@@ -4,7 +4,7 @@ import HeaderSubHeader from 'semantic-ui-react/dist/commonjs/elements/Header/Hea
 import {SYSTEM_CLK, FN_MASH_BLF} from './parameters';
 
 
-const StateTable = ({sendCommand}) => {
+const StateTable = ({sendCommand, handleDivChange, handleCheckboxChange, handleCycChange}) => {
     const [states, setStates] = useState(new Array(16).fill(0))
     const [freqs, setFreqs] = useState(new Array(16).fill(0))
     const [divs, setDivs] = useState(new Array(16).fill(0));
@@ -52,76 +52,76 @@ const StateTable = ({sendCommand}) => {
         }
     }
 
-    const handleDivChange = (e) => {
-        e.preventDefault();
-        const div = e.target.value;
-        const index = e.target.name
-        console.log(index)
-        const freq = (SYSTEM_CLK * FN_MASH_BLF / 64)/(div - 0.5)
-        setFreqs(f => {
-            let tmps = [...freqs]
-            tmps[index] = freq
-            return tmps
-        })
-        setDivs(d => {
-            let tmps = [...divs]
-            tmps[index] = div
-            return tmps
-        })
-        // if (e.key === "Enter") {
-        //     e.preventDefault();
-        //     const div = e.target.value;
-        //     const index = e.target.name
-        //     const freq = (SYSTEM_CLK * FN_MASH_BLF / 64)/(div - 0.5)
-        //     setFreqs(f => {
-        //         let tmps = [...freqs]
-        //         tmps[index] = freq
-        //         return tmps
-        //     })
-        //     setDivs(d => {
-        //         let tmps = [...divs]
-        //         tmps[index] = div
-        //         return tmps
-        //     })
-        // }
-    }
+    // const handleDivChange = (e) => {
+    //     e.preventDefault();
+    //     const div = e.target.value;
+    //     const index = e.target.name
+    //     console.log(index)
+    //     const freq = (SYSTEM_CLK * FN_MASH_BLF / 64)/(div - 0.5)
+    //     setFreqs(f => {
+    //         let tmps = [...freqs]
+    //         tmps[index] = freq
+    //         return tmps
+    //     })
+    //     setDivs(d => {
+    //         let tmps = [...divs]
+    //         tmps[index] = div
+    //         return tmps
+    //     })
+    //     // if (e.key === "Enter") {
+    //     //     e.preventDefault();
+    //     //     const div = e.target.value;
+    //     //     const index = e.target.name
+    //     //     const freq = (SYSTEM_CLK * FN_MASH_BLF / 64)/(div - 0.5)
+    //     //     setFreqs(f => {
+    //     //         let tmps = [...freqs]
+    //     //         tmps[index] = freq
+    //     //         return tmps
+    //     //     })
+    //     //     setDivs(d => {
+    //     //         let tmps = [...divs]
+    //     //         tmps[index] = div
+    //     //         return tmps
+    //     //     })
+    //     // }
+    // }
 
-    const handleCycChange = (e) => {
-        e.preventDefault();
-        const cyc = e.target.value;
-        const index = e.target.name
-        const duration = (cyc * 1000 / freqs[index])
-        setDurations(d => {
-            let tmps = [...durations]
-            tmps[index] = duration
-            return tmps
-        })
-        setCycs(c => {
-            let tmps = [...cycs]
-            tmps[index] = cyc
-            return tmps
-        })
-        // if (e.key === "Enter") {
-        //     e.preventDefault();
-        //     const cyc = e.target.value;
-        //     const index = e.target.name
-        //     setCycs(c => {
-        //         let tmps = [...cycs]
-        //         tmps[index] = cyc
-        //         return tmps
-        //     })
-        // }
-    }
+    // const handleCycChange = (e) => {
+    //     e.preventDefault();
+    //     const cyc = e.target.value;
+    //     const index = e.target.name
+    //     const duration = (cyc * 1000 / freqs[index])
+    //     setDurations(d => {
+    //         let tmps = [...durations]
+    //         tmps[index] = duration
+    //         return tmps
+    //     })
+    //     setCycs(c => {
+    //         let tmps = [...cycs]
+    //         tmps[index] = cyc
+    //         return tmps
+    //     })
+    //     // if (e.key === "Enter") {
+    //     //     e.preventDefault();
+    //     //     const cyc = e.target.value;
+    //     //     const index = e.target.name
+    //     //     setCycs(c => {
+    //     //         let tmps = [...cycs]
+    //     //         tmps[index] = cyc
+    //     //         return tmps
+    //     //     })
+    //     // }
+    // }
 
-    const handleCheckboxChange = (e, data) => {
-        e.preventDefault();
-        const index = data.index
-        setStates(s => {
-            let tmps = [...states]
-            tmps[index] = tmps[index] == 1 ? 0 : 1
-            return tmps
-        })
-    }
+    // const handleCheckboxChange = (e, data) => {
+    //     e.preventDefault();
+    //     const index = data.index
+    //     setStates(s => {
+    //         let tmps = [...states]
+    //         tmps[index] = tmps[index] == 1 ? 0 : 1
+    //         return tmps
+    //     })
+    // }
 
     const getTableRow = num => {
         return (
