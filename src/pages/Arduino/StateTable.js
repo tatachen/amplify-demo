@@ -4,53 +4,53 @@ import HeaderSubHeader from 'semantic-ui-react/dist/commonjs/elements/Header/Hea
 import {SYSTEM_CLK, FN_MASH_BLF} from './parameters';
 
 
-const StateTable = ({sendCommand, handleDivChange, handleCheckboxChange, handleCycChange}) => {
-    const [states, setStates] = useState(new Array(16).fill(0))
-    const [freqs, setFreqs] = useState(new Array(16).fill(0))
-    const [divs, setDivs] = useState(new Array(16).fill(0));
-    const [cycs, setCycs] = useState(new Array(16).fill(0))
-    const [durations, setDurations] = useState(new Array(16).fill(0))
+const StateTable = ({states, freqs, divs, cycs, durations, sendCommand, handleDivChange, handleCheckboxChange, handleCycChange}) => {
+    // const [states, setStates] = useState(new Array(16).fill(0))
+    // const [freqs, setFreqs] = useState(new Array(16).fill(0))
+    // const [divs, setDivs] = useState(new Array(16).fill(0));
+    // const [cycs, setCycs] = useState(new Array(16).fill(0))
+    // const [durations, setDurations] = useState(new Array(16).fill(0))
 
-    const send = () => {
-        let results = "";
-        let init = true;
-        // states.map((s, index) => {
-        //     if (s == 1) {
-        //         if (init) {
-        //             results += index + "," + divs[index] + "," + cycs[index]
-        //             init = false
-        //         } else {
-        //             results += "|" + index + "," + divs[index] + "," + cycs[index]
-        //         }
-        //     }
-        // })
-        states.map((s, index) => {
-            if (checkData(s, index)) {
-                if (init) {
-                    results += s + "," + index + "," + divs[index] + "," + cycs[index]
-                    init = false
-                } else {
-                    results += "|" + s + "," + index + "," + divs[index] + "," + cycs[index]
-                }
-            }
-        })
-        console.log(results)
-        sendCommand(results);
-    }
+    // const send = () => {
+    //     let results = "";
+    //     let init = true;
+    //     // states.map((s, index) => {
+    //     //     if (s == 1) {
+    //     //         if (init) {
+    //     //             results += index + "," + divs[index] + "," + cycs[index]
+    //     //             init = false
+    //     //         } else {
+    //     //             results += "|" + index + "," + divs[index] + "," + cycs[index]
+    //     //         }
+    //     //     }
+    //     // })
+    //     states.map((s, index) => {
+    //         if (checkData(s, index)) {
+    //             if (init) {
+    //                 results += s + "," + index + "," + divs[index] + "," + cycs[index]
+    //                 init = false
+    //             } else {
+    //                 results += "|" + s + "," + index + "," + divs[index] + "," + cycs[index]
+    //             }
+    //         }
+    //     })
+    //     console.log(results)
+    //     sendCommand(results);
+    // }
 
-    const checkData = (s, index) => {
-        if (s == 1) {
-            if (divs[index] == 0 || cycs[index] == 0) {
-                return false
-            }
-            return true;
-        } else {
-            if (divs[index] == 0 && cycs[index] == 0) {
-                return false;
-            } 
-            return true;
-        }
-    }
+    // const checkData = (s, index) => {
+    //     if (s == 1) {
+    //         if (divs[index] == 0 || cycs[index] == 0) {
+    //             return false
+    //         }
+    //         return true;
+    //     } else {
+    //         if (divs[index] == 0 && cycs[index] == 0) {
+    //             return false;
+    //         } 
+    //         return true;
+    //     }
+    // }
 
     // const handleDivChange = (e) => {
     //     e.preventDefault();
@@ -164,7 +164,7 @@ const StateTable = ({sendCommand, handleDivChange, handleCheckboxChange, handleC
                     {getTableContent()}
                 </TableBody>
             </Table>
-            <Form.Button onClick={send}>Send</Form.Button>
+            {/* <Form.Button onClick={send}>Send</Form.Button> */}
         </>
     )
 }

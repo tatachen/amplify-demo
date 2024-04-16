@@ -208,6 +208,10 @@ const Arduino = () => {
                 {
                     type === 'web' && 
                     <StateTable 
+                        states={states}
+                        freqs={freqs}
+                        divs={divs}
+                        durations={durations}
                         sendCommand = {sendCommand} 
                         handleDivChange={handleDivChange}
                         handleCheckboxChange={handleCheckboxChange}
