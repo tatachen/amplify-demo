@@ -197,7 +197,7 @@ const Arduino = () => {
                 <Form.Group>
                     <Form.Button color='teal' onClick={connect} disabled={isConnected}>Connect</Form.Button>
                     <Form.Button color='teal' onClick={disconnect} disabled={!isConnected}>Disconnect</Form.Button>
-                    <Button color='teal' animated="vertical" as={Link} to='/files/Arduino_Web.rar' target="_blank" download>
+                    <Button color='teal' animated="vertical" as={Link} to='/files/Arduino_MPP_USI_Web_Final.rar' target="_blank" download>
                         <Button.Content visible>Sketch</Button.Content>
                         <Button.Content hidden>
                             <Icon name="download" />
