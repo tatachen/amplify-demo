@@ -23,6 +23,11 @@ const types = [
         key: "26",
         text: "MPP 2.6",
         value: "26"
+    },
+    {
+        key: "usi",
+        text: "USI",
+        value: "usi"
     }
 ]
 
@@ -61,7 +66,7 @@ const Arduino = () => {
     }
 
     const download = () => {
-        return <Link to="/files/Arduino_MPP_Web.rar" target="_blank" download></Link>;
+        return <Link to="/files/Arduino_MPP_USI_Web_Final.rar" target="_blank" download></Link>;
     }
 
     const handleChange = (e, value) => {
